@@ -17,6 +17,7 @@ __pycache__/
 *.avi
 *.git
 *.mov
+*.MOV
 
 original_vid/
 
