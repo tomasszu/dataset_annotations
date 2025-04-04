@@ -14,6 +14,10 @@ class VideoAnnotationApp:
         self.cap = cv2.VideoCapture(video_path)
         self.annotations = pd.read_csv(csv_path)
 
+        # Calculate scaling factors
+        self.x_scale = self.resized_width / int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        self.y_scale = self.resized_height / int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
         self.frame_annotations = self._load_annotations()
         self.bboxes = []
         self.selected_box = None
@@ -22,17 +26,17 @@ class VideoAnnotationApp:
         self.start_x, self.start_y = 0, 0
         self.current_frame = 0
 
+
         self._setup_tkinter_ui()
 
     def _load_annotations(self):
         annotations = {}
-        x_scale = self.resized_width / int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        y_scale = self.resized_height / int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         
         for index, row in self.annotations.iterrows():
             frame_id = row['frame_id']
-            bbox = (int(row['x1'] * x_scale), int(row['y1'] * y_scale),
-                    int((row['x2'] - row['x1']) * x_scale), int((row['y2'] - row['y1']) * y_scale))
+            # Adjust bboxes to match resized frame
+            bbox = (int(row['x1'] * self.x_scale), int(row['y1'] * self.y_scale),
+                    int((row['x2'] - row['x1']) * self.x_scale), int((row['y2'] - row['y1']) * self.y_scale))
             if frame_id not in annotations:
                 annotations[frame_id] = []
             annotations[frame_id].append((bbox, row['track_id']))  # Store track_id with bbox
@@ -63,11 +67,45 @@ class VideoAnnotationApp:
         self.jump_button = tk.Button(self.control_window, text="Go", command=self.jump_to_frame)
         self.jump_button.pack(side="left", padx=10)
 
+        self.delete_label = tk.Label(self.control_window, text="Enter Track ID to Delete:")
+        self.delete_label.pack(side="left", padx=5)
+
+        self.delete_entry = tk.Entry(self.control_window)
+        self.delete_entry.pack(side="left", padx=5)
+
+        self.delete_button = tk.Button(self.control_window, text="Delete BBox", command=self.delete_bbox)
+        self.delete_button.pack(side="left", padx=10)
+
+        self.save_button = tk.Button(self.control_window, text="Save Changes", command=self.save_annotations)
+        self.save_button.pack(side="left", padx=10)
+
         self.canvas.bind("<ButtonPress-1>", self.on_click)
         self.canvas.bind("<B1-Motion>", self.on_drag)
         self.canvas.bind("<ButtonRelease-1>", self.on_release)
 
         self.update_frame()
+
+    def delete_bbox(self):
+        track_id_to_delete = self.delete_entry.get()
+        if not track_id_to_delete:
+            print("Please enter a track ID.")
+            return
+
+        try:
+            track_id_to_delete = int(track_id_to_delete)  # Convert input to an integer
+        except ValueError:
+            print("Invalid track ID.")
+            return
+
+        if self.current_frame in self.frame_annotations:
+            # Search for the bounding box with the specified track_id
+            self.bboxes = [bbox for bbox in self.bboxes if bbox[1] != track_id_to_delete]
+            self.frame_annotations[self.current_frame] = [(bbox, track_id) for bbox, track_id in self.frame_annotations[self.current_frame] if track_id != track_id_to_delete]
+
+            self.update_frame()  # Refresh the frame after deletion
+            print(f"Deleted bounding box with Track ID {track_id_to_delete} from frame {self.current_frame}")
+        else:
+            print(f"No annotations found for frame {self.current_frame}.")
 
     def is_inside_bbox(self, x, y, bbox):
         bx, by, bw, bh = bbox
@@ -167,9 +205,35 @@ class VideoAnnotationApp:
         except ValueError:
             pass  # Ignore if input is not a valid integer
 
+    def save_annotations(self):
+        updated_data = []
+
+        # Update the annotations with the current bounding boxes
+        for frame_id, boxes in self.frame_annotations.items():
+            for bbox, track_id in boxes:
+                x, y, w, h = bbox
+                # Convert back to original resolution
+                x1 = int(x / self.x_scale)
+                y1 = int(y / self.y_scale)
+                x2 = int((x + w) / self.x_scale)
+                y2 = int((y + h) / self.y_scale)
+
+                updated_data.append({
+                    'frame_id': frame_id,
+                    'track_id': track_id,
+                    'x1': x1,
+                    'y1': y1,
+                    'x2': x2,
+                    'y2': y2
+                })
+
+        updated_df = pd.DataFrame(updated_data)
+        updated_df.to_csv('updated_bboxes.csv', index=False)
+        print("Annotations saved to updated_bboxes.csv")
+
     def run(self):
         self.root.mainloop()
 
 if __name__ == "__main__":
-    app = VideoAnnotationApp("reduced_vid_3.mp4", "annotated_output/pidgeon_annotations3.csv")
+    app = VideoAnnotationApp("vid_4.MOV", "annotated_output/pidgeon_annotations4.csv")
     app.run()

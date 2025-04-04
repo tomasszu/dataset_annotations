@@ -196,8 +196,8 @@ class AnnotationUpdater:
         print("Annotations saved to updated_annotations.csv")
 
 # Create an instance of the AnnotationUpdater
-csv_path = 'annotated_output/pidgeon_annotations3.csv'
-video_path = 'reduced_vid_3.mp4'
+csv_path = 'annotated_output/pidgeon_annotations4.csv'
+video_path = 'vid_4.MOV'
 annotation_updater = AnnotationUpdater(csv_path, video_path)
 
 # Start the tkinter GUI loop

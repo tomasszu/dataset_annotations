@@ -8,13 +8,13 @@ output_dir = "annotated_output"
 
 # Run inference with tracking enabled
 results = model.track(
-    source='reduced_vid_3.mp4',
+    source='vid_4.MOV',
     save=True, 
     save_txt=False,  # We handle saving manually
     conf=0.3,
     classes=[14],  # COCO class ID for birds
     project=output_dir,
-    name="pidgeon_annotations3",
+    name="pidgeon_annotations4",
     tracker="bytetrack.yaml"  # Use ByteTrack for tracking
 )
 
@@ -45,7 +45,7 @@ for result in results:
 df = pd.DataFrame(csv_data, columns=["filename", "frame_id", "track_id", "x1", "y1", "x2", "y2", "confidence", "class_id"])
 
 # Save as CSV
-csv_path = f"{output_dir}/pidgeon_annotations3.csv"
+csv_path = f"{output_dir}/pidgeon_annotations4.csv"
 df.to_csv(csv_path, index=False)
 
 print(f"Annotations saved to {csv_path}")
