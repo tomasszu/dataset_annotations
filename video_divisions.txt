@@ -1,0 +1,28 @@
+Video 1:
+
+#Video vislaik griežas ap riņķi - nekad neapstajas, tapec nav jegas dalit sikaak
+Part1: 0- 41
+Part2: 42 - EOF
+
+Video 2:
+
+#Video nemaina uzņemšanas leņķi - baloži gan paši aktīvi maina
+Part1: 0- 76
+Part2: 77 - EOF
+
+Video 3:
+
+#Video maina uzņemšanas leņķi 4-5 reizes
+Part1: 0- 53
+Part2: 56 - 85 #Šitais tāds sketchy, varbut ka ari janem araa (notiek kustiba, miglains)
+Part3: 113 - 162
+Part4: 219 - 266
+Part5: 312 - EOF
+
+Video 4:
+
+#Video maina uzņemšanas leņķi 3 reizes
+Part1: 0- 180
+Part2: 320 - 480 
+Part3: 613 - EOF
+

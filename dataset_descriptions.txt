@@ -1,0 +1,178 @@
+Video 1:
+
+    Instance count per pidgeon ID:
+    ID 1: 92 instance(s)
+    ID 2: 59 instance(s)
+    ID 3: 63 instance(s)
+    ID 4: 93 instance(s)
+
+    Test dataset:
+
+        === Part Statistics ===
+        part1:
+        Total instances: 154
+        Unique IDs: 4
+        part2:
+        Total instances: 153
+        Unique IDs: 4
+
+Video 2:
+
+    Instance count per pidgeon ID:
+    ID 1: 56 instance(s)
+    ID 2: 54 instance(s)
+    ID 3: 105 instance(s)
+    ID 4: 153 instance(s)
+    ID 6: 123 instance(s)
+    ID 7: 152 instance(s)
+    ID 8: 65 instance(s)
+    ID 9: 134 instance(s)
+    ID 10: 150 instance(s)
+    ID 11: 150 instance(s)
+    ID 12: 108 instance(s)
+    ID 13: 148 instance(s)
+    ID 14: 81 instance(s)
+    ID 15: 140 instance(s)
+    ID 17: 147 instance(s)
+    ID 18: 90 instance(s)
+    ID 26: 103 instance(s)
+    ID 27: 110 instance(s)
+    ID 31: 85 instance(s)
+    ID 33: 63 instance(s)
+
+    Train dataset:
+
+        Train: [3,4,6,7,9,10,11,12,13,15,17,26,27]
+        Val: [1,2,8,14,18,31,33]
+
+        train.csv: 1723 samples
+        val.csv: 494 samples
+
+    Test dataset:
+
+    === Part Statistics ===
+    part1:
+    Total instances: 1166
+    Unique IDs: 20
+    part2:
+    Total instances: 1051
+    Unique IDs: 17
+
+Video 3:
+
+    Instance count per pidgeon ID:
+    ID 1: 296 instance(s)
+    ID 2: 329 instance(s)
+    ID 3: 225 instance(s)
+    ID 4: 242 instance(s)
+    ID 6: 224 instance(s)
+    ID 7: 265 instance(s)
+    ID 8: 183 instance(s)
+    ID 9: 327 instance(s)
+    ID 10: 115 instance(s)
+    ID 11: 100 instance(s)
+    ID 12: 159 instance(s)
+    ID 13: 161 instance(s)
+    ID 15: 173 instance(s)
+    ID 21: 101 instance(s)
+    ID 28: 112 instance(s)
+    ID 74: 181 instance(s)
+    ID 79: 115 instance(s)
+    ID 84: 178 instance(s)
+
+    Train dataset:
+
+
+        Train: [1,2,3,4,6,7,9,12,13,15,74,84]
+        Val: [8,10,11,21,28,79]
+
+        train.csv: 2719 samples
+        val.csv: 702 samples
+
+    Test dataset:
+
+    === Part Statistics ===
+    part1:
+    Total instances: 616
+    Unique IDs: 15
+    part2:
+    Total instances: 352
+    Unique IDs: 14
+    part3:
+    Total instances: 616
+    Unique IDs: 16
+    part4:
+    Total instances: 425
+    Unique IDs: 14
+    part5:
+    Total instances: 380
+    Unique IDs: 10
+
+    Test dataset lite:
+
+    === Part Statistics ===
+    part1:
+    Total instances: 616
+    Unique IDs: 15
+    part3:
+    Total instances: 616
+    Unique IDs: 16
+    part4:
+    Total instances: 425
+    Unique IDs: 14
+    part5:
+    Total instances: 380
+    Unique IDs: 10
+
+
+Video 4:
+
+    Instance count per pidgeon ID:
+    ID 1: 743 instance(s)
+    ID 2: 598 instance(s)
+    ID 3: 528 instance(s)
+    ID 4: 737 instance(s)
+    ID 5: 715 instance(s)
+    ID 6: 602 instance(s)
+    ID 7: 691 instance(s)
+    ID 8: 637 instance(s)
+    ID 9: 587 instance(s)
+    ID 10: 652 instance(s)
+    ID 11: 474 instance(s)
+    ID 12: 670 instance(s)
+    ID 13: 731 instance(s)
+    ID 16: 440 instance(s)
+    ID 17: 387 instance(s)
+    ID 25: 343 instance(s)
+
+    Train dataset:
+
+        Train: [1,2,4,5,6,7,8,10,12,13,16]
+        Val: [3,9,11,17,25]
+
+        train.csv: 7216 samples
+        val.csv: 2320 samples
+
+    Test dataset:
+
+    === Part Statistics ===
+    part1:
+    Total instances: 2254
+    Unique IDs: 13
+    part2:
+    Total instances: 2108
+    Unique IDs: 16
+    part3:
+    Total instances: 1696
+    Unique IDs: 15
+
+
+Video 1,2,4 trainingset
+
+    #bet sis isteniba sketchy jo tie bjords varetu but redzami vairakos video teoretiski
+
+    Train samples: 12060
+    Val samples: 3421
+    Total unique remapped IDs: 58
+
+

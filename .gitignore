@@ -11,13 +11,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# extensions
 *.pt
 *.mp4
 *.avi
 *.git
 *.mov
 *.MOV
+*.png
 
 original_vid/
 
