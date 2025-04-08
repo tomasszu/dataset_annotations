@@ -48,15 +48,19 @@ Video 2:
         train.csv: 1723 samples
         val.csv: 494 samples
 
+    Train ar split ids:
+
+        pidgeon_vid_2: Train=1544, Val=673, Total IDs=20
+
     Test dataset:
 
-    === Part Statistics ===
-    part1:
-    Total instances: 1166
-    Unique IDs: 20
-    part2:
-    Total instances: 1051
-    Unique IDs: 17
+        === Part Statistics ===
+        part1:
+        Total instances: 1166
+        Unique IDs: 20
+        part2:
+        Total instances: 1051
+        Unique IDs: 17
 
 Video 3:
 
@@ -89,40 +93,44 @@ Video 3:
         train.csv: 2719 samples
         val.csv: 702 samples
 
+    Train ar split ids:
+
+        pidgeon_vid_3: Train=2387, Val=1034, Total IDs=18
+
     Test dataset:
 
-    === Part Statistics ===
-    part1:
-    Total instances: 616
-    Unique IDs: 15
-    part2:
-    Total instances: 352
-    Unique IDs: 14
-    part3:
-    Total instances: 616
-    Unique IDs: 16
-    part4:
-    Total instances: 425
-    Unique IDs: 14
-    part5:
-    Total instances: 380
-    Unique IDs: 10
+        === Part Statistics ===
+        part1:
+        Total instances: 616
+        Unique IDs: 15
+        part2:
+        Total instances: 352
+        Unique IDs: 14
+        part3:
+        Total instances: 616
+        Unique IDs: 16
+        part4:
+        Total instances: 425
+        Unique IDs: 14
+        part5:
+        Total instances: 380
+        Unique IDs: 10
 
     Test dataset lite:
 
-    === Part Statistics ===
-    part1:
-    Total instances: 616
-    Unique IDs: 15
-    part3:
-    Total instances: 616
-    Unique IDs: 16
-    part4:
-    Total instances: 425
-    Unique IDs: 14
-    part5:
-    Total instances: 380
-    Unique IDs: 10
+        === Part Statistics ===
+        part1:
+        Total instances: 616
+        Unique IDs: 15
+        part3:
+        Total instances: 616
+        Unique IDs: 16
+        part4:
+        Total instances: 425
+        Unique IDs: 14
+        part5:
+        Total instances: 380
+        Unique IDs: 10
 
 
 Video 4:
@@ -153,18 +161,22 @@ Video 4:
         train.csv: 7216 samples
         val.csv: 2320 samples
 
+    Train ar split ids:
+
+        pidgeon_vid_4: Train=6665, Val=2870, Total IDs=16
+
     Test dataset:
 
-    === Part Statistics ===
-    part1:
-    Total instances: 2254
-    Unique IDs: 13
-    part2:
-    Total instances: 2108
-    Unique IDs: 16
-    part3:
-    Total instances: 1696
-    Unique IDs: 15
+        === Part Statistics ===
+        part1:
+        Total instances: 2254
+        Unique IDs: 13
+        part2:
+        Total instances: 2108
+        Unique IDs: 16
+        part3:
+        Total instances: 1696
+        Unique IDs: 15
 
 
 Video 1,2,4 trainingset
